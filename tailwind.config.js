@@ -2,7 +2,17 @@
 export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        "custom-dark-blue": "rgb(17, 20, 45)",
+        light: "#ffffff",
+        "divider-color": "rgb(228, 228, 228)",
+        "active-color": "rgb(108, 93, 211)",
+        secondary: "rgb(128, 129, 145)",
+        font: `"Inter", sans-serif`,
+        "white-color": "rgb(255, 255, 255)",
+      },
+    },
   },
   plugins: [],
 };
