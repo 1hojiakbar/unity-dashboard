@@ -12,6 +12,7 @@ export default {
         secondary: "rgb(128, 129, 145)",
         font: `"Inter", sans-serif`,
         "white-color": "rgb(255, 255, 255)",
+        "card-bg": "rgb(255, 235, 246)",
       },
     },
   },
