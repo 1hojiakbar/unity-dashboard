@@ -1,11 +1,14 @@
+import { useState } from "react";
 import { CenterBox } from "./style";
 import { Line } from "react-chartjs-2";
+import RightSection from "./RightSection";
 import { Button } from "../../components/Generic";
 import closeIcon from "../../assets/icons/i-remove.svg";
 import { data, items, options } from "../../utils/overview";
-import RightSection from "./RightSection";
 
 const Overview = () => {
+  const [show, setShow] = useState(true);
+
   return (
     <div>
       <div className="flex justify-between w-full overflow-scroll">
@@ -18,21 +21,34 @@ const Overview = () => {
               Welcome back👋
             </h1>
           </div>
-          <CenterBox className="rounded-xl bg-active-color h-max">
-            <div className="flex items-center justify-center absolute bg-white right-2 top-2 rounded-full cursor-pointer">
-              <img className="m-[9px] w-3" src={closeIcon} alt="" />
-            </div>
-            <h1 className="w-48 text-white font-semibold text-[24px]">
-              Set a Google Analytics Code
-            </h1>
-            <p className="text-white text-[14px] w-48">
-              Did you know you can set a Google Analytics code for your
-              products?
-            </p>
-            <Button className="flex items-center h-10 bg-white rounded-lg p-3">
-              Go Setting
+          {show && (
+            <CenterBox className="rounded-xl bg-active-color h-max">
+              <div
+                className="flex items-center justify-center absolute bg-white right-2 top-2 rounded-full cursor-pointer"
+                onClick={() => setShow(false)}
+              >
+                <img className="m-[9px] w-3" src={closeIcon} alt="" />
+              </div>
+              <h1 className="w-48 text-white font-semibold text-[24px]">
+                Set a Google Analytics Code
+              </h1>
+              <p className="text-white text-[14px] w-48">
+                Did you know you can set a Google Analytics code for your
+                products?
+              </p>
+              <Button className="flex items-center h-10 bg-white rounded-lg p-3">
+                Go Setting
+              </Button>
+            </CenterBox>
+          )}
+          {!show && (
+            <Button
+              className="flex items-center justify-center w-36 mx-auto mt-14 bg-active-color h-10 text-white rounded-lg p-3"
+              onClick={() => setShow(true)}
+            >
+              Undo
             </Button>
-          </CenterBox>
+          )}
           <div className="flex justify-between my-12">
             <div className="max-w-sm h-max bg-white rounded-lg shadow-xl overflow-hidden">
               <div className="flex flex-col px-6 py-4">
