@@ -6,6 +6,7 @@ import {
   PointElement,
   LineElement,
   Title,
+  BarElement,
   Tooltip,
   Legend,
 } from "chart.js";
@@ -14,6 +15,7 @@ ChartJS.register(
   CategoryScale,
   LinearScale,
   PointElement,
+  BarElement,
   LineElement,
   Title,
   Tooltip,
@@ -104,6 +106,46 @@ export const options = {
     y: {
       beginAtZero: true,
       max: 60,
+    },
+  },
+};
+
+export const barChartData = {
+  labels: ["Graphics", "Theme", "Template"],
+  datasets: [
+    {
+      label: "Bar",
+      data: [27, 20, 10],
+      backgroundColor: [
+        "rgb(108, 93, 211)",
+        "rgb(160, 215, 231)",
+        "rgb(108, 93, 211)",
+        "rgb(160, 215, 231)",
+        "rgb(108, 93, 211)",
+        "rgb(160, 215, 231)",
+      ],
+      borderWidth: 0,
+    },
+  ],
+};
+
+export const barChartOptions = {
+  responsive: true,
+  plugins: {
+    legend: {
+      display: false,
+    },
+    tooltip: {
+      callbacks: {
+        label: function (context: any) {
+          return `${context.raw}`;
+        },
+      },
+    },
+  },
+  scales: {
+    y: {
+      beginAtZero: true,
     },
   },
 };

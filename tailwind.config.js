@@ -11,6 +11,7 @@ export default {
         "active-color": "rgb(108, 93, 211)",
         secondary: "rgb(128, 129, 145)",
         font: `"Inter", sans-serif`,
+        "notfication-bg": "rgb(255, 117, 76)",
         "white-color": "rgb(255, 255, 255)",
         "card-bg": "rgb(255, 235, 246)",
       },

@@ -1,14 +1,15 @@
-import { Button } from "../../components/Generic";
 import { CenterBox } from "./style";
+import { Line } from "react-chartjs-2";
+import { Button } from "../../components/Generic";
 import closeIcon from "../../assets/icons/i-remove.svg";
 import { data, items, options } from "../../utils/overview";
-import { Line } from "react-chartjs-2";
+import RightSection from "./RightSection";
 
 const Overview = () => {
   return (
     <div>
       <div className="flex justify-between w-full overflow-scroll">
-        <div className="p-8 w-3/4 h-screen">
+        <div className="p-8 w-3/4 h-screen border-r-2 border-divider-color overflow-scroll">
           <div>
             <h1 className="text-xl md:text-xm lg:text-xl text-custom-dark-blue">
               Hi Tam Tran,
@@ -33,7 +34,7 @@ const Overview = () => {
             </Button>
           </CenterBox>
           <div className="flex justify-between my-12">
-            <div className="max-w-sm h-max bg-white rounded-lg shadow-xl border-2 border-gray-200 overflow-hidden">
+            <div className="max-w-sm h-max bg-white rounded-lg shadow-xl overflow-hidden">
               <div className="flex flex-col px-6 py-4">
                 <h2 className="font-bold text-xl mb-4">Earning by items</h2>
                 <ul className="flex flex-col gap-5">
@@ -77,10 +78,10 @@ const Overview = () => {
                 </ul>
               </div>
             </div>
-            <div className="bg-card-bg rounded-lg w-1/2 shadow-xl border-2 border-gray-200 overflow-hidden">
-              <div className="flex flex-col p-4 w-full h-full">
+            <div className="bg-card-bg rounded-lg w-1/2 shadow-xl overflow-hidden">
+              <div className="flex flex-col p-3 w-full h-full">
                 <h2 className="font-bold text-xl mb-4">Earning</h2>
-                <div className="flex items-center flex-col justify-around rounded-lg h-full bg-white">
+                <div className="flex items-center px-2 flex-col justify-around rounded-lg h-full bg-white">
                   <Line data={data} options={options} />
                   <Button className="flex items-center justify-center bg-active-color w-full py-4 rounded-2xl h-12 text-white text-md font-semibold">
                     Go Analytics
@@ -90,8 +91,8 @@ const Overview = () => {
             </div>
           </div>
         </div>
-        <div className="w-2/4 border-2 p-8 border-red-600 h-screen">
-          <h1>content 2</h1>
+        <div className="w-2/4 p-8 h-screen overflow-scroll">
+          <RightSection />
         </div>
       </div>
     </div>

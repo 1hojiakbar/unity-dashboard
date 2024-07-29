@@ -1,10 +1,12 @@
 import React from "react";
 
 interface GenericInputProps {
-  children: React.ReactNode;
   iconLeft?: string;
   iconRight?: string;
-  onChange: () => void;
+  type?: string;
+  className?: string;
+  placeholder: string;
+  onChange?: () => void;
 }
 
 const Input: React.FC<GenericInputProps> = ({
@@ -13,8 +15,8 @@ const Input: React.FC<GenericInputProps> = ({
   iconRight,
   ...props
 }) => (
-  <div>
-    {iconLeft && iconLeft}
+  <div className="flex items-center gap-3 px-2">
+    <img src={iconLeft && iconLeft} />
     <input {...props} onChange={onChange} />
     {iconRight && iconRight}
   </div>
