@@ -1,7 +1,7 @@
 import { Bar } from "react-chartjs-2";
 import { Input } from "../../components/Generic";
 import bellIcon from "../../assets/icons/bell.svg";
-import searchIcon from "../../assets/icons/search.svg";
+import searchIcon from "../../assets/icons/searchIcon.svg";
 import { barChartData, barChartOptions } from "../../utils/overview";
 
 const RightSection = () => {
